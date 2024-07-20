@@ -30,4 +30,4 @@ var mergeAlternately = function (word1, word2) {
   return result;
 };
 
-//console.log(mergeAlternately("abcdef", "pqr"));
+console.log(mergeAlternately("abcdef", "pqr"));
