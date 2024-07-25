@@ -31,4 +31,6 @@ var moveZeroes = function (nums) {
     return nums;
 };
 
-console.log(moveZeroes([0,2,5,0,0,6,1]))
+const result = moveZeroes([0,2,5,0,0,6,1])
+
+console.log(result)
