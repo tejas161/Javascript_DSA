@@ -39,6 +39,38 @@ function inOrder(root) {
   return arr;
 }
 
+// Function to perform preorder traversal
+// of the tree and store values in 'arr'
+function preorder(root, arr) {
+  // If the current node is NULL
+  // (base case for recursion), return
+  if (root === null) {
+      return;
+  }
+  // Push the current node's
+  // value into the array
+  arr.push(root.data);
+  // Recursively traverse
+  // the left subtree
+  preorder(root.left, arr);
+  // Recursively traverse 
+  // the right subtree
+  preorder(root.right, arr);
+}
+
+// Function to initiate preorder traversal
+// and return the resulting array
+function preOrder(root) {
+  // Create an empty array to
+  // store preorder traversal values
+  const arr = [];
+  // Call the preorder traversal function
+  preorder(root, arr);
+  // Return the resulting array
+  // containing preorder traversal values
+  return arr;
+}
+
 // Creating a sample binary tree
 const root = new Node(1);
 root.left = new Node(2);
@@ -47,10 +79,15 @@ root.left.left = new Node(4);
 root.left.right = new Node(5);
 
 // Getting inorder traversal
-const result = inOrder(root);
-console.log(result)
+const result1 = inOrder(root);
+console.log(result1);
+
+// Getting preorder traversal
+const result2 = preOrder(root);
+console.log(result2);
 
 // Displaying the inorder traversal result
-console.log("Inorder Traversal: " + result.join(" "));
+console.log("Inorder Traversal: " + result1.join(" "));
+console.log("Preorder Traversal: " + result2.join(" "));
                           
                       
