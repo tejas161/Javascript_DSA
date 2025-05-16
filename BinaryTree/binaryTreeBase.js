@@ -71,6 +71,38 @@ function preOrder(root) {
   return arr;
 }
 
+
+// Function to perform postorder
+// traversal recursively
+function postorder(root, arr) {
+  // Base case: if root
+  // is null, return
+  if (root === null) {
+      return;
+  }
+  // Traverse left subtree
+  postorder(root.left, arr);
+  // Traverse right subtree
+  postorder(root.right, arr);
+  // Visit the node (push node's 
+  // data to the array)
+  arr.push(root.data);
+}
+
+// Function to get the postorder
+// traversal of a binary tree
+function postOrder(root) {
+  // Create an array to
+  // store the traversal result
+  const arr = [];
+  // Perform postorder traversal
+  // starting from the root
+  postorder(root, arr);
+  // Return the postorder
+  // traversal result
+  return arr;
+}
+
 // Creating a sample binary tree
 const root = new Node(1);
 root.left = new Node(2);
@@ -86,8 +118,13 @@ console.log(result1);
 const result2 = preOrder(root);
 console.log(result2);
 
+// Getting postorder traversal
+const result3 = postOrder(root);
+console.log(result3);
+
 // Displaying the inorder traversal result
 console.log("Inorder Traversal: " + result1.join(" "));
 console.log("Preorder Traversal: " + result2.join(" "));
+console.log("Postorder Traversal: " + result3.join(" "));
                           
                       
